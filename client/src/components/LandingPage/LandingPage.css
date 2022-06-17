@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+body {
+    background: url('./world.webp');
+    background-color: black;
+    background-image: fixed;
+    background-size: expanded; 
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+}  
+
+
+.h1 {
+    font-family: 'Play', sans-serif;
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 0.2em rgb(37, 110, 179), 0 0 0.2em rgb(255, 255, 255);
+    box-sizing: content-box;
+    transition-duration: .5s;
+    transition-delay: 8ms;
+}   
+
+.h1:hover {
+    color:aqua;
+    cursor: default;
+    text-decoration: underline ;
+    transform-origin:center;
+}
+
+
+.button {
+    font-family: 'Play', sans-serif;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 100px;
+    padding: 20px 60px;
+    background-color:rgb(0, 16, 61);
+    border-right: 3px solid rgb(128, 176, 231);
+    border-bottom: 3px solid rgb(128, 176, 231); 
+    border-left: 3px solid rgb(128, 176, 231);
+    border-top: 3px solid rgb(128, 176, 231);
+    transition: .5s;
+}
+
+.button:hover{
+    cursor: pointer;
+    background: black;
+    color: 3px solid rgb(128, 176, 231);
+    border-right: 3px solid red;
+    border-bottom: 3px solid red;
+    border-left: 3px solid red;
+    border-top: 3px solid red;
+}
+
+.button:focus {
+    padding: 18px 54px;
+}
