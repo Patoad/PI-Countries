@@ -175,21 +175,19 @@ router.get('/:id', async (req, res) => {
 });
 
 
-// router.post('/', async (req, res, next)=>{
-//     const { name, id, difficulty, duration, season } = req.body;
-//     try{
-//         const newActivity = await Activity.create({ name, id, difficulty, duration, season } );
-//         const activityDb = await Activity.findAll({
-//             where: {
-//                 name: activity}
-//         });
-//         newActivity.addActivity(activityDb)
-//         res.send("A new activity is being practiced here!")
-//     }catch(error){
-//         next(error)
-//     }
-// });
-
+router.post('/', async (req, res, next)=>{
+    const { name, difficulty, duration, season, countries } = req.body;
+    try{
+        const newActivity = await Activity.create({ name, difficulty, duration, season, countries } );
+        countries.forEach(async (country) => {
+            let activityCountry = await Country.findOne({ where: { name: country } });
+            await newActivity.addCountry(activityCountry);
+        });
+        return res.status(201).send(newActivities);
+    } catch (error) {
+    console.log(error);
+    }
+});
 
 router.delete('/:id', async (req, res, next)=>{
     try{
